@@ -1,0 +1,19 @@
+resources:
+  - name: my_docker_repo
+    type: GitRepo
+    configuration: 
+      path: docker-demo
+      gitProvider: myGit
+
+pipelines:
+  - name: my_demo_pipeline
+    type: DockerBuild
+    configuration: 
+      dockerFileLocation: .
+      dockerFileName: Dockerfile
+      dockerImageName: hub.docker.com/ajitjfrog/node-docker-demo
+      dockerImageTag: $run_number
+      inputResources: 
+        - name: my_docker_repo
+      integrations: 
+        - name: docker_hub
