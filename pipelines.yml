@@ -2,7 +2,7 @@ resources:
   - name: my_docker_repo
     type: GitRepo
     configuration: 
-      path: docker-demo
+      path: ajit-jain/docker-demo
       gitProvider: myGit
 
 pipelines:
