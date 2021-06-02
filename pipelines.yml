@@ -7,13 +7,15 @@ resources:
 
 pipelines:
   - name: my_demo_pipeline
-    type: DockerBuild
-    configuration: 
-      dockerFileLocation: .
-      dockerFileName: Dockerfile
-      dockerImageName: hub.docker.com/ajitjfrog/node-docker-demo
-      dockerImageTag: $run_number
-      inputResources: 
-        - name: my_docker_repo
-      integrations: 
-        - name: docker_hub
+    steps: 
+      - name: build_docker_image
+        type: DockerBuild
+        configuration: 
+          dockerFileLocation: .
+          dockerFileName: Dockerfile
+          dockerImageName: hub.docker.com/ajitjfrog/node-docker-demo
+          dockerImageTag: $run_number
+          inputResources: 
+            - name: my_docker_repo
+          integrations: 
+            - name: docker_hub
