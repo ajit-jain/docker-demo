@@ -17,6 +17,9 @@ pipelines:
             - echo "$(printenv)"
             - pushd $res_my_docker_repo_resourcePath
             - ls
+            - docker build --tag node-docker:1.0.$run_number . 
+            - docker tag node-docker:1.0.$run_number ajitjfrog/testapps123:1.0.$run_number
+            - docker push ajitjfrog/testapps123:1.0.$run_number
             - popd
         configuration: 
           inputResources: 
