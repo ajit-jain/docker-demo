@@ -14,8 +14,7 @@ pipelines:
           onStart:
             - echo "Preparing for work..."
           onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
+            - echo "$(printenv)"
         configuration: 
           inputResources: 
             - name: my_docker_repo
