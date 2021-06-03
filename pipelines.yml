@@ -16,4 +16,9 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
+        configuration: 
+          inputResources: 
+            - name: my_docker_repo
+          integrations: 
+            - name: docker_hub
           
