@@ -15,7 +15,7 @@ pipelines:
             - echo "Preparing for work..."
           onExecute:
             - echo "$(printenv)"
-            - cd /var/opt/jfrog/pipelines/data/my_demo_pipeline/runs/5/steps/bash_demo/$run_number/dependencyState/resources/my_docker_repo
+            - cd ajit-jain/docker-demo
             - ls
         configuration: 
           inputResources: 
