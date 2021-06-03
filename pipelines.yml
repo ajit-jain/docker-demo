@@ -15,8 +15,9 @@ pipelines:
             - echo "Preparing for work..."
           onExecute:
             - echo "$(printenv)"
-            - cd ajit-jain/docker-demo
+            - pushd $res_my_docker_repo_resourcePath
             - ls
+            - popd
         configuration: 
           inputResources: 
             - name: my_docker_repo
