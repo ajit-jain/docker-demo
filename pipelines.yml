@@ -19,6 +19,7 @@ pipelines:
             - ls
             - docker build --tag node-docker:1.0.$run_number . 
             - docker tag node-docker:1.0.$run_number ajitjfrog/testapps123:1.0.$run_number
+            - docker login -u="$int_docker_hub_username" -p="$int_docker_hub_password"
             - docker push ajitjfrog/testapps123:1.0.$run_number
             - popd
         configuration: 
