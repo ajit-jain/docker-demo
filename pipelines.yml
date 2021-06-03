@@ -8,14 +8,12 @@ resources:
 pipelines:
   - name: my_demo_pipeline
     steps: 
-      - name: build_docker_image
-        type: DockerBuild
-        configuration: 
-          dockerFileLocation: .
-          dockerFileName: Dockerfile
-          dockerImageName: hub.docker.com/ajitjfrog/node-docker-demo
-          dockerImageTag: $run_number
-          inputResources: 
-            - name: my_docker_repo
-          integrations: 
-            - name: docker_hub
+      - name: bash_demo
+        type: Bash
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+          onExecute:
+            - echo "executing task command 1"
+            - echo "executing task command 2"
+          
